@@ -41,8 +41,13 @@ end
 def print(students)
   students.each_with_index do | student, index |
     new_index = index + 1
-    if student[:name].length < 12
-    puts "#{new_index}. #{student[:name]} (#{student[:cohort]} cohort). From #{student[:country_of_birth]}. They like #{student[:hobbies]}. They are #{student[:height]} feet"
+    if student[:name].length < 12 && student[:name].include?("h")
+    puts "#{new_index}. #{student[:name]}".center(50)
+    puts "(#{student[:cohort]} cohort).".center(50)
+    puts "From #{student[:country_of_birth]}.".center(50)
+    puts "They like #{student[:hobbies]}.".center(50)
+    puts "They are #{student[:height]} feet".center(50)
+  else
     end
   end
 end
